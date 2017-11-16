@@ -19,12 +19,13 @@
     "prepublish": "in-publish && yarn run build || :"
   },
   "devDependencies": {
+    "@types/node": "^8.0.53",
     "in-publish": "^2.0.0",
     "typescript": "^2.3.4"
   },
   "dependencies": {
-    "@types/graphql": "^0.9.1",
-    "apollo-codegen": "0.12.7",
-    "core-js": "^2.4.1"
+    "@types/graphql": "^0.11.6",
+    "apollo-codegen": "^0.17.2",
+    "core-js": "^2.5.1"
   }
 }
