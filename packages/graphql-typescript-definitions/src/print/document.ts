@@ -31,7 +31,7 @@ export default class Document {
   private typesUsed = new Map<GraphQLCompositeType, number>();
   private fieldMap = new Map<Field, FieldObject>();
 
-  constructor(public name: string, {fields, inlineFragments = []}: {fields: Field[], inlineFragments?: InlineFragment[]}) {
+  constructor(public name: string, {fields = [], inlineFragments = []}: {fields: Field[], inlineFragments?: InlineFragment[]}) {
     for (const field of fields) {
       this.collectField(field);
     }

@@ -23,14 +23,14 @@ GraphQLError: Syntax Error packages/graphql-typescript-definitions/test/fixtures
      ^
 3:   relatives {
 
-    at syntaxError (node_modules/graphql/error/syntaxError.js:28:15)
-    at expect (node_modules/graphql/language/parser.js:969:32)
-    at many (node_modules/graphql/language/parser.js:1017:3)
-    at parseSelectionSet (node_modules/graphql/language/parser.js:253:17)
-    at parseFragmentDefinition (node_modules/graphql/language/parser.js:366:19)
-    at parseDefinition (node_modules/graphql/language/parser.js:139:16)
-    at parseDocument (node_modules/graphql/language/parser.js:109:22)
-    at Object.parse (node_modules/graphql/language/parser.js:46:10)
+    at syntaxError (node_modules/graphql/error/syntaxError.js:30:15)
+    at expect (node_modules/graphql/language/parser.js:972:32)
+    at many (node_modules/graphql/language/parser.js:1020:3)
+    at parseSelectionSet (node_modules/graphql/language/parser.js:252:17)
+    at parseFragmentDefinition (node_modules/graphql/language/parser.js:365:19)
+    at parseDefinition (node_modules/graphql/language/parser.js:138:16)
+    at parseDocument (node_modules/graphql/language/parser.js:108:22)
+    at Object.parse (node_modules/graphql/language/parser.js:45:10)
     at Builder.<anonymous> (packages/graphql-typescript-definitions/lib/index.js:164:40)
     at Generator.next (<anonymous>)
 
@@ -91,11 +91,27 @@ Error: Error in packages/graphql-typescript-definitions/test/fixtures/missing-ty
 
 exports[`cli succeeds when there are no fixture errors 1`] = `
 Object {
-  "error": null,
+  "error": Object {
+    "cmd": "packages/graphql-typescript-definitions/bin/graphql-typescript-definitions 'packages/graphql-typescript-definitions/test/fixtures/all-clear/documents/**/*.graphql' --schema-path 'packages/graphql-typescript-definitions/test/fixtures/all-clear/schema.json'",
+    "code": 1,
+    "killed": false,
+    "signal": null,
+  },
   "stderr": "",
   "stdout": "
- BUILT  packages/graphql-typescript-definitions/test/fixtures/all-clear/documents/Query.graphql → packages/graphql-typescript-definitions/test/fixtures/all-clear/documents/Query.graphql.d.ts
- BUILT  packages/graphql-typescript-definitions/test/fixtures/all-clear/documents/Fragment.graphql → packages/graphql-typescript-definitions/test/fixtures/all-clear/documents/Fragment.graphql.d.ts
+ ERROR  Error in packages/graphql-typescript-definitions/test/fixtures/all-clear/documents/Fragment.graphql: fragments is not iterable
+Error: Error in packages/graphql-typescript-definitions/test/fixtures/all-clear/documents/Fragment.graphql: fragments is not iterable
+    at Builder.<anonymous> (packages/graphql-typescript-definitions/lib/index.js:123:39)
+    at Generator.next (<anonymous>)
+    at packages/graphql-typescript-definitions/lib/index.js:7:71
+    at new Promise (<anonymous>)
+    at __awaiter (packages/graphql-typescript-definitions/lib/index.js:3:12)
+    at Promise.all.Object.keys.map (packages/graphql-typescript-definitions/lib/index.js:116:35)
+    at Array.map (<anonymous>)
+    at Builder.<anonymous> (packages/graphql-typescript-definitions/lib/index.js:116:22)
+    at Generator.next (<anonymous>)
+    at packages/graphql-typescript-definitions/lib/index.js:7:71
+
 ",
 }
 `;

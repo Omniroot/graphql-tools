@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "pretest": "yarn run build",
     "prepublish": "in-publish && yarn run build || :"
   },
   "devDependencies": {

@@ -10,7 +10,7 @@ import {
   GraphQLInterfaceType,
   GraphQLObjectType,
 } from 'graphql';
-const {compileToIR} = require('apollo-codegen/lib/compiler');
+const {compileToLegacyIR} = require('apollo-codegen/lib/compiler/legacyIR');
 
 export interface Variable {
   name: string,
@@ -63,4 +63,4 @@ export interface Compile {
   (schema: GraphQLSchema, document: DocumentNode): AST,
 }
 
-export const compile: Compile = compileToIR;
+export const compile: Compile = compileToLegacyIR;
