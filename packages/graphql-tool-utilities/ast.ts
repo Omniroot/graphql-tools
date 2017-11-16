@@ -10,7 +10,7 @@ import {
   GraphQLInterfaceType,
   GraphQLObjectType,
 } from 'graphql';
-const {compileToIR} = require('apollo-codegen/lib/compilation');
+const {compileToIR} = require('apollo-codegen/lib/compiler');
 
 export interface Variable {
   name: string,

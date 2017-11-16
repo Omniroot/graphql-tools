@@ -8,13 +8,15 @@
     "test": "jest --config ./config/jest/config.json",
     "test:watch": "yarn run test -- --watch",
     "check": "yarn run ts && yarn run test",
-    "prepublish": "in-publish && yarn run check || :"
+    "prepublish": "in-publish && yarn run check || :",
+    "bootstrap": "lerna bootstrap",
+    "nuke": "rm -rf node_modules && rm -rf packages/*/node_modules && rm yarn.lock && rm packages/*/yarn.lock"
   },
   "devDependencies": {
     "@types/chalk": "^0.4.31",
     "@types/fs-extra": "^3.0.3",
     "@types/glob": "^5.0.30",
-    "@types/graphql": "^0.9.1",
+    "@types/graphql": "^0.11.6",
     "@types/jest": "^19.2.4",
     "@types/node": "^7.0.29",
     "@types/yargs": "^6.6.0",

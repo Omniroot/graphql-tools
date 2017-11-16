@@ -363,7 +363,7 @@ function printField(
         printAfter.push(' | null)[]');
       }
     } else {
-      currentType = currentType.ofType;
+      currentType = (currentType as GraphQLNonNull<any>).ofType;
     }
   }
 

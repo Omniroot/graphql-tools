@@ -65,8 +65,8 @@ export function validateFixtureAgainstSchema(fixture: Fixture, schema: GraphQLSc
   };
 }
 
-function objectTypeHasFieldWithName(type: GraphQLObjectType, name: string) {
-  return type.getFields()[name] != null;
+function objectTypeHasFieldWithName(type: GraphQLObjectType | null | undefined, name: string): type is GraphQLObjectType {
+  return type != null && type.getFields()[name] != null;
 }
 
 function normalizeOperationName(operationName: string) {
